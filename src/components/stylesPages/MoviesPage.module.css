@@ -1,0 +1,24 @@
+
+
+.input-wrap {
+  padding-left: 700px;
+}
+
+.input {
+  width: 200px;
+  height: 43px;
+  margin-right: 20px;
+  font-size: 17px;
+  border-radius: 8px;
+  background-color: rgb(245, 239, 150);
+  outline: none;
+  border: 1px solid transparent;
+  transition: border-color 0.25s;
+  padding-left: 10px;
+}
+
+
+.spiner {
+  display: flex;
+  justify-content: center;
+}
