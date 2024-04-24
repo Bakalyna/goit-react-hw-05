@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { fetchMovieId } from '../movies-API/movies-API';
 import { Link, Outlet, useLocation, useParams } from 'react-router-dom';
 import css from '../components/stylesPages/MovieDetailsPage.module.css';
@@ -7,6 +7,8 @@ const MovieDetailsPage = () => {
   const location = useLocation();
   const { movieId } = useParams();
   const [movieDetails, setDetailsMovies] = useState({});
+
+  const goBack = useRef(location?.state ?? '/movies');
 
   useEffect(() => {
     const fetchDetailsMovies = async () => {
@@ -22,7 +24,7 @@ const MovieDetailsPage = () => {
 
   return (
     <div className={css.mainWrap}>
-      <Link to={location.state || '/'} className={css.button}>
+      <Link to={goBack.current} className={css.button}>
         Go back
       </Link>
       <img

@@ -16,7 +16,7 @@ const MovieReviews = () => {
       }
     };
     fetchReviews();
-  }, []);
+  }, [movieId]);
 
   return (
     <div>
